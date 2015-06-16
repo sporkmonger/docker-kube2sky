@@ -3,10 +3,9 @@
 # Fail hard and fast
 set -eo pipefail
 
-export ETCD_PORT1=${ETCD_PORT1:-2379}
-export ETCD_PORT2=${ETCD_PORT2:-4001}
+export ETCD_PORT=${ETCD_PORT:-4001}
 export HOST_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
-export ETCD="http://$HOST_IP:$ETCD_PORT1,http://$HOST_IP:$ETCD_PORT2"
+export ETCD="http://$HOST_IP:$ETCD_PORT"
 
 echo "[kube2sky] booting container. ETCD: $ETCD"
 
