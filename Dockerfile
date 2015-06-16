@@ -8,10 +8,10 @@ RUN mkdir -p /opt/bin
 COPY ./start /opt/bin/start
 RUN chmod a+x /opt/bin/start
 
-RUN go get github.com/GoogleCloudPlatform/kubernetes/cluster/addons/dns/kube2sky && \
+RUN go get -d github.com/GoogleCloudPlatform/kubernetes/cluster/addons/dns/kube2sky && \
   cd /go/src/github.com/GoogleCloudPlatform/kubernetes/cluster/addons/dns/kube2sky && \
   make kube2sky && \
-  cd - \
+  cd - && \
   mv /go/src/github.com/GoogleCloudPlatform/kubernetes/cluster/addons/dns/kube2sky/kube2sky /opt/bin/kube2sky
 
 # Run the boot script
