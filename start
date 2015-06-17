@@ -10,3 +10,5 @@ export ETCD="http://$HOST_IP:$ETCD_PORT"
 echo "[kube2sky] booting container. ETCD: $ETCD"
 
 /opt/bin/kube2sky -etcd-server=$ETCD $@
+
+echo "[kube2sky] exit"
