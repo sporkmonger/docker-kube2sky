@@ -17,4 +17,4 @@ COPY ./start /opt/bin/start
 RUN chmod a+x /opt/bin/start
 
 # Run the boot script
-ENTRYPOINT /opt/bin/start
+CMD /opt/bin/start
