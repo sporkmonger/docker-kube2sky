@@ -7,7 +7,7 @@ export ETCD_PORT=${ETCD_PORT:-4001}
 export HOST_IP=`/sbin/ip route|awk '/default/ { print $3 }'`
 export ETCD="http://$HOST_IP:$ETCD_PORT"
 
-echo "[kube2sky] booting container. ETCD: $ETCD"
+echo "[kube2sky] booting container. ARGS: $@ ETCD: $ETCD"
 
 /opt/bin/kube2sky -etcd-server=$ETCD $@
 
