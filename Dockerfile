@@ -16,5 +16,8 @@ RUN go get -d github.com/GoogleCloudPlatform/kubernetes/cluster/addons/dns/kube2
 COPY ./start /opt/bin/start
 RUN chmod a+x /opt/bin/start
 
+# Make sure everything is up-to-date
+RUN /opt/bin/cveck
+
 # Run the boot script
 CMD /opt/bin/start
